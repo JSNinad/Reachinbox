@@ -25,7 +25,25 @@ Make sure you have the following installed before setting up the project:
 
 The project is organized as follows:
 
-Reachinbox/ │ ├── src/ │ ├── aigen.ts # AI integration for email categorization │ ├── app.ts # Main application entry point │ ├── Authentication.ts # Handles Gmail and Outlook authentication │ ├── auto.ts # Automated response generation │ ├── Configure.ts # Configuration for environment variables │ ├── email.ts # Email service for Gmail │ ├── outlookauth.ts # Handles Outlook authentication │ └── outlookemail.ts # Outlook email service │ ├── .env # Environment variables file ├── .gitignore # Files/folders to ignore in version control ├── package-lock.json # Lock file for npm dependencies ├── package.json # Project dependencies and scripts ├── tsconfig.json # TypeScript configuration └── README.md # Project documentation (this file)
+Reachinbox/
+│
+├── src/
+│   ├── aigen.ts              # AI-driven email categorization logic
+│   ├── app.ts                # Entry point of the application
+│   ├── Authentication.ts     # Handles OAuth for Gmail and Outlook
+│   ├── auto.ts               # Automates email responses
+│   ├── Configure.ts          # Configures environment variables
+│   ├── email.ts              # Gmail email service integration
+│   ├── outlookauth.ts        # Handles Outlook authentication
+│   └── outlookemail.ts       # Outlook email service integration
+│
+├── .env                      # Environment variables configuration
+├── .gitignore                # Files and folders to ignore in Git
+├── package-lock.json         # Lockfile for npm dependencies
+├── package.json              # npm dependencies and scripts
+├── tsconfig.json             # TypeScript configuration
+└── README.md                 # This documentation
+
 
 
 ## Setup
