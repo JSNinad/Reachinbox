@@ -23,6 +23,9 @@ Make sure you have the following installed before setting up the project:
 
 ## Folder Structure
 
+
+```bash 
+
 The project is organized as follows:
 Reachinbox/
 │
