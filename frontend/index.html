@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Form</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="dark-mode">
+  <div class="toggle-container">
+    <label class="switch">
+      <input type="checkbox" id="modeSwitch">
+      <span class="slider round"></span>
+    </label>
+    <span id="modeText">Dark Mode</span>
+  </div>
+
+  <h1>ReachInBox Assignment</h1>
+  <div class="container">
+    <div class="option">Sign In Using</div>
+    <div class="google">
+      <a href="http://localhost:3000/auth/gmail/"><i class="fab fa-google"></i> Sign in With Google</a>
+    </div>
+    <div class="microsoft">
+      <a href="http://localhost:3000/auth/outlook/"><i class="fab fa-microsoft"></i> Sign in With Microsoft</a>
+    </div>
+  </div>
+
+  <script>
+    const modeSwitch = document.getElementById('modeSwitch');
+    const body = document.body;
+    const modeText = document.getElementById('modeText');
+
+    modeSwitch.addEventListener('change', () => {
+      if (modeSwitch.checked) {
+        body.classList.add('light-mode');
+        body.classList.remove('dark-mode');
+        modeText.textContent = 'Light Mode';
+      } else {
+        body.classList.add('dark-mode');
+        body.classList.remove('light-mode');
+        modeText.textContent = 'Dark Mode';
+      }
+    });
+  </script>
+</body>
+</html>

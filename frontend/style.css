@@ -1,0 +1,160 @@
+/* Base Styles for Dark Mode */
+body.dark-mode {
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #1e1e1e;
+  }
+  
+  h1 {
+    text-align: left;
+    color: #00ffcc;
+    font-size: 28px;
+    margin-left: 20px; /* Moved to the left */
+    margin-bottom: 50px; /* Increased distance from the box */
+  }
+  
+  .container {
+    text-align: center;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #2b2b2b;
+    box-shadow: 0px 0px 20px 2px #00ffcc;
+  }
+  
+  .option {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: white;
+  }
+  
+  .google a, .microsoft a {
+    display: inline-block;
+    margin: 15px 0;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff;
+    transition: 0.3s;
+  }
+  
+  .google a {
+    background-color: #d34836;
+  }
+  
+  .microsoft a {
+    background-color: #00a4ef;
+  }
+  
+  .google a:hover {
+    box-shadow: 0 0 10px 0 #d34836;
+  }
+  
+  .microsoft a:hover {
+    box-shadow: 0 0 10px 0 #00a4ef;
+  }
+  
+  /* Light Mode Styles */
+  body.light-mode {
+    background-color: #f5f5f5;
+  }
+  
+  body.light-mode h1 {
+    color: #333;
+  }
+  
+  body.light-mode .container {
+    background-color: #ffffff;
+    box-shadow: 0px 0px 20px 2px #0078d7;
+  }
+  
+  body.light-mode .google a {
+    background-color: #db4437;
+    color: #ffffff;
+  }
+  
+  body.light-mode .microsoft a {
+    background-color: #0078d7;
+    color: #ffffff;
+  }
+  
+  body.light-mode .google a:hover, body.light-mode .microsoft a:hover {
+    box-shadow: none;
+  }
+  
+  /* Toggle Button Styles */
+  .toggle-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+  
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  
+  #modeText {
+    font-size: 16px;
+    color: #fff;
+    margin-left: 10px;
+    vertical-align: middle;
+  }
+  
+  body.light-mode #modeText {
+    color: #000;
+  }
+  
