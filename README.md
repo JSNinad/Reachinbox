@@ -24,25 +24,29 @@ Make sure you have the following installed before setting up the project:
 ## Folder Structure
 
 The project is organized as follows:
-
 Reachinbox/
 │
-├── src/
-│   ├── aigen.ts              # AI-driven email categorization logic
-│   ├── app.ts                # Entry point of the application
-│   ├── Authentication.ts     # Handles OAuth for Gmail and Outlook
-│   ├── auto.ts               # Automates email responses
-│   ├── Configure.ts          # Configures environment variables
-│   ├── email.ts              # Gmail email service integration
-│   ├── outlookauth.ts        # Handles Outlook authentication
-│   └── outlookemail.ts       # Outlook email service integration
+├── backend/
+│   ├── node_modules/          # Node.js dependencies (auto-generated)
+│   ├── src/                   # Source files
+│   │   ├── aigen.ts           # AI service for email categorization
+│   │   ├── app.ts             # Main application entry point
+│   │   ├── Authentication.ts  # OAuth authentication for Gmail and Outlook
+│   │   ├── auto.ts            # Handles automated email response generation
+│   │   ├── Configure.ts       # Configuration and environment variable setup
+│   │   ├── email.ts           # Gmail email service integration
+│   │   ├── outlookauth.ts     # Handles OAuth authentication for Outlook
+│   │   └── outlookemail.ts    # Outlook email service integration
+│   │
+│   ├── .env                   # Environment variables file (not committed to version control)
+│   ├── .gitignore             # Git ignore file
+│   ├── package.json           # Project metadata and dependencies
+│   ├── package-lock.json      # npm lock file for exact dependency versions
+│   ├── tsconfig.json          # TypeScript configuration
+│   └── README.md              # Documentation (this file)
 │
-├── .env                      # Environment variables configuration
-├── .gitignore                # Files and folders to ignore in Git
-├── package-lock.json         # Lockfile for npm dependencies
-├── package.json              # npm dependencies and scripts
-├── tsconfig.json             # TypeScript configuration
-└── README.md                 # This documentation
+└── frontend/                  # (Optional) Placeholder for frontend if applicable
+
 
 
 
@@ -67,3 +71,33 @@ OUTLOOK_REDIRECT_URI=http://localhost:3000/auth/outlook/callback
 
 # OpenAI Configuration
 OPENAI_API_KEY=your_openai_api_key
+5. Start the Server
+Once the setup is complete, you can start the server using the following command:
+
+bash
+Copy code
+npm start
+The server will be accessible at http://localhost:3000.
+
+6. Authenticate Email Accounts
+To authenticate Gmail and Outlook accounts, use the following URLs:
+
+Gmail Authentication: Visit http://localhost:3000/auth/gmail.
+Outlook Authentication: Visit http://localhost:3000/auth/outlook.
+7. Process Emails
+You can process unread emails by visiting the following URLs:
+
+Process Gmail Emails: http://localhost:3000/process-email/gmail
+Process Outlook Emails: http://localhost:3000/process-email/outlook
+API Endpoints
+Here is a list of available API endpoints for this project:
+
+/auth/gmail: Initiates Gmail OAuth2 authentication.
+/auth/outlook: Initiates Outlook OAuth2 authentication.
+/process-email/gmail: Processes the latest unread Gmail email.
+/process-email/outlook: Processes the latest unread Outlook email.
+Technologies Used
+Node.js: Backend server framework.
+Express: Web application framework.
+OAuth2: Authentication for Gmail and Outlook.
+OpenAI GPT: For email categorization and automated response generation.
