@@ -4,6 +4,7 @@ import { getOutlookAuthUrl, getOutlookToken, verifyOutlookToken } from './outloo
 import { processEmail as handleGmailEmails } from './email';
 import { processEmail as handleOutlookEmails } from './outlookemial';
 import { config } from './Configure';
+import {scheduleEmailProcessing} from './auto';
 import './auto';
 
 const server = express();
@@ -94,6 +95,9 @@ server.get('/process-email/:provider', async (req, res) => {
     res.status(500).send('Processing error: ' + (err instanceof Error ? err.message : 'Unknown error occurred'));
   }
 });
+
+scheduleEmailProcessing();
+
 
 // Start the server
 server.listen(serverPort, () => {

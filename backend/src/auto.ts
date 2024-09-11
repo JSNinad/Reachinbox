@@ -19,10 +19,11 @@ async function executeEmailProcessing() {
 }
 
 export function scheduleEmailProcessing() {
-  // Define a cron job that runs every 5 minutes
-  const cronTask = new CronJob('*/5 * * * *', executeEmailProcessing);
+  // Define a cron job that runs every 10 seconds
+  const cronTask = new CronJob('*/10 * * * * *', executeEmailProcessing);
+
 
   cronTask.start();
 
-  console.log('Scheduled email processing initiated. It will run every 5 minutes.');
+  console.log('Scheduled email processing initiated. It will run every 10 seconds.');
 }
